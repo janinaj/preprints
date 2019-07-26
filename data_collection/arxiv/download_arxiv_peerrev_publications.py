@@ -35,15 +35,24 @@ namespaces = {'oai': 'http://www.openarchives.org/OAI/2.0/',
              'arXiv' : 'http://arxiv.org/OAI/arXiv/'}
 
 with open(OUTPUT_FILE, 'w') as o:
+	# for each file there are a bunch of arXiv records
 	for file in files:
 		root = ET.parse(os.path.join(INPUT_FOLDER, file))
-		for record in root.find('oai:ListRecords', namespaces):
-			if record.tag == '{' + namespaces['oai'] + '}' + 'record':
 
+		# for each arXiv record in the file
+		for record in root.find('oai:ListRecords', namespaces):
+			# check if it is a record
+			if record.tag == '{' + namespaces['oai'] + '}' + 'record':
+				# find the metadata tag
 				metadata = record.find('oai:metadata/arXiv:arXiv', namespaces)
+
+				# if it has one, it means the record is not deleted
 				if metadata is not None:
 
+					# find the doi
 					doi = metadata.find('arXiv:doi', namespaces)
+
+					# if it has a doi, download the CrossRef record if there is one
 					if doi is not None:
 						doi = doi.text
 						identifier = record.find('oai:header/oai:identifier', namespaces).text
