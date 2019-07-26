@@ -3,7 +3,7 @@ from habanero import Crossref
 
 cr = Crossref()
 
-OUTPUT_FILE = os.path.join('..', '..', 'raw_data', 'CrossRef.json')
+OUTPUT_FILE = os.path.join('..', '..', '..', 'raw_data', 'CrossRef', 'CrossRef.json')
 
 with open(OUTPUT_FILE, 'a') as o:
 	saved_results = 0

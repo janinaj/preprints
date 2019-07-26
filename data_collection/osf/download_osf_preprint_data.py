@@ -1,7 +1,14 @@
+# This code does not account for errors in retrieving data.
+
 import urllib.request, json, time, os
 
 PREPRINT_URL = 'https://api.osf.io/v2/preprints/?format=json'
-OUTPUT_FILE = os.path.join('..', '..', 'raw_data', 'osf.json')
+
+OUTPUT_FOLDER = os.path.join('..', '..', '..', 'data', 'osf')
+if not os.path.exists(OUTPUT_FOLDER):
+	os.mkdir(OUTPUT_FOLDER)
+
+OUTPUT_FILE = os.path.join(OUTPUT_FOLDER , 'osf_records.json')
 
 # total number of records collected
 records = 0
