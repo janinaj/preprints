@@ -13,7 +13,7 @@ def download_from_url(url):
 		except Exception as e:
 			if e.code == 401:
 				error_message = str(e)
-				print('Error processing URL: {}.'.format(contributor_url))
+				print('Error processing URL: {}.'.format(url))
 				
 				break
 
