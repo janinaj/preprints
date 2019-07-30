@@ -5,8 +5,11 @@
     - [Author data](https://github.com/janinaj/preprints/blob/master/data_collection/osf/download_osf_preprint_authors.py)
     - [Author affiliation data](https://github.com/janinaj/preprints/blob/master/data_collection/osf/download_osf_preprint_author_institutions.py)
     - [CrossRef records](https://github.com/janinaj/preprints/blob/master/data_collection/osf/download_osf_crossref_data.py)
+        + CrossRef record of OSF preprint
+        + "Peer-reviewed" publication (using DOI from OSF record)
+        + "Peer-reviewed" publication (using DOI from CrossRef record)
     - [Title and author search results (from CrossRef)](https://github.com/janinaj/preprints/blob/master/data_collection/osf/search_osf_title_authors_crossref.py)
-2. Combine data into a single file
+2. [Combine data into a single file]()
 
 ## Data Preprocessing
 
